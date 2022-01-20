@@ -15,13 +15,11 @@ public class Chassis extends SubsystemBase {
 
   // initialize right motors
   private SpeedControllerGroup m_right = new SpeedControllerGroup(new WPI_VictorSPX(MotorPorts.chassisRightFront), new WPI_VictorSPX(MotorPorts.chassisRightBack));
-
+  
   // initialize left motors
   private SpeedControllerGroup m_left = new SpeedControllerGroup(new WPI_VictorSPX(MotorPorts.chassisLeftFront), new WPI_VictorSPX(MotorPorts.chassisLeftBack));
 
   private static final Chassis m_chassis = new Chassis(); // creates the only instance of Chassis
-  
-  private static boolean isReversed = true; // variable that checks if the drive direction is reversed
 
   private Chassis() {}
 
@@ -31,22 +29,12 @@ public class Chassis extends SubsystemBase {
 
   // seting the speeds of the motors
   public void setRightMotorsSpeed(double speed) {
-    m_right.set(speed * (isReversed ? 1 : -1)); // if isReversed is true this will be equal to (1 * speed), and if isReversed is false this will be equal to (-1 * speed)
+    m_right.set(speed); 
   }
 
   public void setLeftMotorsSpeed(double speed) {
-    m_left.set(speed * (isReversed ? 1 : -1)); // same as above but for the left motors
+    m_left.set(speed); 
   }
-
- // sets the direction
- public static void setReversed(boolean isReversed) {
-   Chassis.isReversed = isReversed;
- }
-// gets the direction
-public static boolean getReversed() {
-  return Chassis.isReversed;
-}
-
 
 
 

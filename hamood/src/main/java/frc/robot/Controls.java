@@ -60,11 +60,7 @@ public class Controls {
   }
 
   // all the commands that are linked to buttons are initialized here \\
-  public static void commandsPeriodic() { 
-    // Reverse controls command \\
-    ReverseControls rc = new ReverseControls();
-    m_reverseButton.whenPressed(rc);
+  public static void commandsPeriodic() {
 
-    // 
   }
 }

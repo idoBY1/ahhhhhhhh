@@ -89,4 +89,25 @@ public final class Constants {
     public static final
     double DONT_KILL_THE_MOTORS = 0.4;
     }
+
+    //-------------------------------------------------------------------------------------------------------------\\
+    public interface StuffThatPID {
+        public static final double
+
+        // Angle PID Variables \\
+        ANGLE_KP = 0.0467,
+        ANGLE_KI = 0,
+        ANGLE_KD = 0,
+
+        // Velocity PID Variables \\
+        VELOCITY_KP = 0.0468,
+        VELOCITY_KI = 0,
+        VELOCITY_KD = 0;
+    }
+    //-------------------------------------------------------------------------------------------------------------\\
+    public interface Censors {
+        public static final int
+        ENCODER_ONE = 0,
+        ENCODER_TWO = 1;
+    }
 }
